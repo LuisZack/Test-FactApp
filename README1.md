@@ -1,1 +1,1 @@
-Forzar script parte 2
+Forzar script parte 3 all OS
