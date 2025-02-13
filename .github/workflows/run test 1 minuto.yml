@@ -1,0 +1,23 @@
+name: Ejecutar Script Test2 - App Fact
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Ejecuta cada 1 minuto (ajusta según lo necesites)
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar script
+        run: python test-app-v2.py
