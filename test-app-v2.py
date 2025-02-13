@@ -27,7 +27,17 @@ def hacer_ping(sitio):
     ##comando = f"ping {param} {sitio} > nul 2>&1" if "windows" in sistema else f"ping {param} {sitio} >/dev/null 2>&1"
 
     ##respuesta = os.system(comando)
-    respuesta = os.system(f"ping -c 1 {sitio}")
+    ###respuesta = os.system(f"ping -c 1 {sitio}")
+    sistema = platform.system().lower()
+    
+    if "windows" in sistema:
+        comando = f"ping -n 1 {sitio} > nul 2>&1"
+        print ('Está en Windows...')
+    else:
+        comando = f"ping -c 1 {sitio} >/dev/null 2>&1"
+        print ('Está en Linux u otro')
+
+    respuesta = os.system(comando)
         
     if respuesta == 0:
         print(f'El sitio {sitio} está accesible.')
