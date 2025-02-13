@@ -19,9 +19,13 @@ def enviar_mensaje_telegram(mensaje):
 
 
 def hacer_ping(sitio):
-    param = '-n 1' if platform.system().lower() == 'windows' else '-c 1'
+    #param = '-n 1' if platform.system().lower() == 'windows' else '-c 1'
     
-    comando = f'ping {param} {sitio}'
+    #comando = f'ping {param} {sitio}'
+    sistema = platform.system().lower()
+    param = "-n 1" if "windows" in sistema else "-c 1"
+    comando = f"ping {param} {sitio} > nul 2>&1" if "windows" in sistema else f"ping {param} {sitio} >/dev/null 2>&1"
+
     respuesta = os.system(comando)
         
     if respuesta == 0:
