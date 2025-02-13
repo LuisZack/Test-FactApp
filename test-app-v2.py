@@ -32,10 +32,10 @@ def hacer_ping(sitio):
     
     if "windows" in sistema:
         comando = f"ping -n 1 {sitio} > nul 2>&1"
-        print ('Está en Windows...')
+        print (f'Ejecutado en Wind...{sistema}')
     else:
         comando = f"ping -c 1 {sitio} >/dev/null 2>&1"
-        print ('Está en Linux u otro')
+        print (f'Ejecutado en Linux u otro...{sistema}')
 
     respuesta = os.system(comando)
         
