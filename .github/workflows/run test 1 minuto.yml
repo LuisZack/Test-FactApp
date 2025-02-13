@@ -8,22 +8,16 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar el repositorio
+      - name: 📥 Clonar el repositorio
         uses: actions/checkout@v3
 
-      - name: Configurar Python
+      - name: 🐍 Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Instalar dependencias
+      - name: 📦 Instalar dependencias
         run: pip install requests
-        
-      - name: Verificar `ping`
-        run: which ping || echo "Ping no encontrado"
 
-      - name: Instalar `ping` en Linux
-        run: sudo apt-get update && sudo apt-get install -y iputils-ping
-
-      - name: Ejecutar script
-        run: python test-app-v2.py
+      - name: ▶️ Ejecutar script
+        run: python test-app-v3.py
