@@ -22,11 +22,12 @@ def hacer_ping(sitio):
     #param = '-n 1' if platform.system().lower() == 'windows' else '-c 1'
     
     #comando = f'ping {param} {sitio}'
-    sistema = platform.system().lower()
-    param = "-n 1" if "windows" in sistema else "-c 1"
-    comando = f"ping {param} {sitio} > nul 2>&1" if "windows" in sistema else f"ping {param} {sitio} >/dev/null 2>&1"
+    ##sistema = platform.system().lower()
+    ##param = "-n 1" if "windows" in sistema else "-c 1"
+    ##comando = f"ping {param} {sitio} > nul 2>&1" if "windows" in sistema else f"ping {param} {sitio} >/dev/null 2>&1"
 
-    respuesta = os.system(comando)
+    ##respuesta = os.system(comando)
+    respuesta = os.system(f"ping -c 1 {sitio}")
         
     if respuesta == 0:
         print(f'El sitio {sitio} está accesible.')
