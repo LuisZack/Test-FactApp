@@ -1,2 +1,2 @@
-Forzar script parte 6 all OS
+Forzar script parte 7 con sockets
 and PING install
