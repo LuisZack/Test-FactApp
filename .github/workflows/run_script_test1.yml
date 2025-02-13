@@ -19,5 +19,8 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests
 
+      - name: Verificar `ping`
+        run: which ping || echo "Ping no encontrado"
+
       - name: Ejecutar script
         run: python test-app-v2.py
