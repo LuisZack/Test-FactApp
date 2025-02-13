@@ -26,10 +26,10 @@ def hacer_ping(sitio):
         
     if respuesta == 0:
         print(f'El sitio {sitio} está accesible.')
-        msj_t=f'Acceso ÉXITOSO al sitio {sitio}'
+        msj_t=f'Acceso ÉXITOSO al sitio {sitio}  y el codigo es {respuesta}'
     else:
         print(f'No se pudo acceder al sitio {sitio}.')
-        msj_t=f'Alerta: No se pudo acceder al sitio {sitio}'
+        msj_t=f'Alerta: No se pudo acceder al sitio {sitio}  y el codigo es {respuesta}'
             
     enviar_mensaje_telegram(msj_t)
         
