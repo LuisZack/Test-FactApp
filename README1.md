@@ -1,1 +1,2 @@
-Forzar script parte 5 all OS
+Forzar script parte 6 all OS
+and PING install
